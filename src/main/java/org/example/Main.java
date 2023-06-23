@@ -119,16 +119,8 @@ public class Main {
 
             Collections.sort(values);
 
-            //calcular em um intervalo válido (0, 100)
-            double q1 = values.get((int) Math.round(values.size() * 0.25));
-            double q2 = values.get((int) Math.round(values.size() * 0.50));
-            double q3 = values.get((int) Math.round(values.size() * 0.75));
-            double min = values.get(0);
-            double max = values.get(values.size() - 1);
-
             // Adicionar os valores ao dataset
             dataset3.add(values, tipoContrato, tipoContrato);
-
         }
 
 
@@ -157,6 +149,9 @@ public class Main {
         frame3.pack();
         frame3.setVisible(true);
 
+
+        // mostrar os dados aposentado = 1, tipocontrato = 2 anos
+        filteredData.filter("TipoContrato = '2 anos'").show();
 
     }
 }
